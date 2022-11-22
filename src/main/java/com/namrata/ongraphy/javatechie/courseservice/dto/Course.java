@@ -1,8 +1,11 @@
 package com.namrata.ongraphy.javatechie.courseservice.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import javax.xml.crypto.Data;
+import java.util.Date;
 
 public class Course {
 
@@ -10,18 +13,17 @@ public class Course {
     private String name;
     private String trainerName;
     private String duration; //days
-    @JsonFormat(shape = JsonFormat.Shape.STRING,pattern = "dd-mm-yyyy")
-    private Data startDate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-mm-yyyy")
+    private Date startDate;
     private String courseType; //live or recording
     private double fees;
     private boolean isCertificateAvailable;
     private String description;
 
-    public Course() {
-    }
+    public Course(){
 
-    public Course(int courseId, String name, String trainerName, String duration,
-                  Data startDate, String courseType, double fees, boolean isCertificateAvailable, String description) {
+    }
+    public Course(int courseId, String name, String trainerName, String duration, Date startDate, String courseType, double fees, boolean isCertificateAvailable, String description) {
         this.courseId = courseId;
         this.name = name;
         this.trainerName = trainerName;
@@ -65,11 +67,11 @@ public class Course {
         this.duration = duration;
     }
 
-    public Data getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Data startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
@@ -103,5 +105,20 @@ public class Course {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "courseId=" + courseId +
+                ", name='" + name + '\'' +
+                ", trainerName='" + trainerName + '\'' +
+                ", duration='" + duration + '\'' +
+                ", startDate=" + startDate +
+                ", courseType='" + courseType + '\'' +
+                ", fees=" + fees +
+                ", isCertificateAvailable=" + isCertificateAvailable +
+                ", description='" + description + '\'' +
+                '}';
     }
 }
