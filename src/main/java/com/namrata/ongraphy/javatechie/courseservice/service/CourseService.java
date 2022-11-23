@@ -6,6 +6,7 @@ import com.namrata.ongraphy.javatechie.courseservice.dto.CourseResponseDTO;
 import com.namrata.ongraphy.javatechie.courseservice.entity.CourseEntity;
 import com.namrata.ongraphy.javatechie.courseservice.util.AppUtils;
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,9 +15,8 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 @Service
-@AllArgsConstructor
-
 public class CourseService {
+    @Autowired
     private CourseDAO courseDAO;
 
     // private List<Course> courseDatabase = new ArrayList<>();
