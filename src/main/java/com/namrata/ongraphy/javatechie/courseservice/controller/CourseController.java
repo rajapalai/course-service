@@ -5,6 +5,7 @@ import com.namrata.ongraphy.javatechie.courseservice.dto.CourseRequestDTO;
 import com.namrata.ongraphy.javatechie.courseservice.dto.CourseResponseDTO;
 import com.namrata.ongraphy.javatechie.courseservice.dto.ServiceResponse;
 import com.namrata.ongraphy.javatechie.courseservice.service.CourseService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,11 +17,9 @@ import java.util.List;
 //@RestController = @Controller and @ResponseBody
 public class CourseController {
 
+    @Autowired
     private CourseService courseService;
 
-    public CourseController(CourseService courseService) {
-        this.courseService = courseService;
-    }
 
     //@RequestMapping(value = "/course",method = RequestMethod.POST)
     @PostMapping
